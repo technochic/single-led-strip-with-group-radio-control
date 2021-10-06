@@ -1,3 +1,6 @@
+function rainbow () {
+    strip.showRainbow(1, 360)
+}
 radio.onReceivedValue(function (name, value) {
     if (name == "mode") {
         currentMODE = value
@@ -6,15 +9,19 @@ radio.onReceivedValue(function (name, value) {
         beatNOW = value
     }
 })
+function solid (Color1: number) {
+    strip.showColor(Color1)
+}
 let beatNOW = 0
 let currentMODE = 0
+let strip: neopixel.Strip = null
 radio.setGroup(1)
-let strip = neopixel.create(DigitalPin.P2, 24, NeoPixelMode.RGB)
+strip = neopixel.create(DigitalPin.P2, 24, NeoPixelMode.RGB)
 basic.forever(function () {
     if (currentMODE == 1) {
-    	
+        rainbow()
     } else if (currentMODE == 2) {
-    	
+        solid(neopixel.hsl(10, 100, 50))
     } else if (currentMODE == 3) {
     	
     } else if (currentMODE == 4) {
