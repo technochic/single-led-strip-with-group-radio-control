@@ -1,6 +1,12 @@
+input.onButtonPressed(Button.A, function () {
+    currentMODE += -1
+})
 function rainbow () {
     strip.showRainbow(1, 360)
 }
+input.onButtonPressed(Button.B, function () {
+    currentMODE += 1
+})
 radio.onReceivedValue(function (name, value) {
     if (name == "mode") {
         currentMODE = value
