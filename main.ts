@@ -23,6 +23,7 @@ let currentMODE = 0
 let strip: neopixel.Strip = null
 radio.setGroup(1)
 strip = neopixel.create(DigitalPin.P2, 24, NeoPixelMode.RGB)
+currentMODE = 1
 basic.forever(function () {
     if (currentMODE == 1) {
         rainbow()
